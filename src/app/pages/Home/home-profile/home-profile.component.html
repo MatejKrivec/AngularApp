@@ -1,0 +1,28 @@
+<div>
+    <main class="main">
+      <div class="HelloUserTextContainer">
+        <h1 class="HelloUserTitle">Hello Matej!</h1>
+      </div>
+      <div class="OptionBtns">
+        <div class="ContentOptions">
+          <button (click)="handleChange('option1')" [class.active]="selectedOption === 'option1'">My auctions</button>
+          <button (click)="handleChange('option2')" [class.active]="selectedOption === 'option2'">Bidding</button>
+          <button (click)="handleChange('option3')" [class.active]="selectedOption === 'option3'">Won</button>
+        </div>
+      </div>
+      
+      <div class="rendered-content">
+        <!-- Use Angular's ngIf or other directives to render content -->
+        <ng-container *ngIf="selectedOption === 'option1'">
+          <app-my-auctions></app-my-auctions>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'option2'">
+          <app-bidding-auctions></app-bidding-auctions>
+        </ng-container>
+        <ng-container *ngIf="selectedOption === 'option3'">
+          <app-won-auctions></app-won-auctions>
+        </ng-container>
+      </div>
+    </main>
+  </div>
+  

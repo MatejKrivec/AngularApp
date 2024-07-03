@@ -1,0 +1,87 @@
+.HomePage {
+    height: 100vh; 
+    width: 100vw;
+ 
+}
+
+.navigacija {
+    align-items: center;
+
+    display: flex;
+    height: 20%; 
+}
+
+.NavButtons {
+    background-color: white; /* Set the background color for the active button */
+    border-radius: 20px;
+    border: none;
+  }
+
+  .NavButtons button {
+    background-color: white; /* Default background color */
+    border: none;
+    border-radius: 20px;
+    margin-right: 2px;
+  }
+
+.NavButtons button.active {
+    background-color: lightblue; /* Set the background color for the active button */
+    border: none;
+  }
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+
+}
+
+.ProfileNav {
+    background-color: lightblue;
+    display: flex;
+    margin-left: auto;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 0.5rem;
+    border-radius: 50px;
+    width: 8.5em;
+    margin-top: 1%;
+    margin-right: 1%;
+    overflow: hidden;
+}
+
+.ProfilePicture {
+   height: 4em;  
+   width: 4em;
+   cursor: pointer;
+   border-radius: 50px;
+
+}
+.ProfileEditBtn {
+    background-color: rgb(244, 255, 39); 
+    border-radius: 50%;
+    height: 4em;  
+    width: 4em;
+}
+
+
+.HelloUserText{
+    margin-left: 3%;
+}
+
+
+.footer {
+  width: 100%;
+  background-color: lightblue; 
+  text-align: center;
+  padding: 1px 0; 
+  position: fixed; 
+  height: 5%; 
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+/*///////////////////////////////////////*/
+
