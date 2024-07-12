@@ -1,1 +1,17 @@
-<p>home-auctions works!</p>
+<!-- main-auctions.component.html -->
+
+<div>
+  <ng-container *ngIf="selectedAuction">
+    <app-auction-details [auction]="selectedAuction" (cancelClick)="handleCloseAuctionDetails()"></app-auction-details>
+  </ng-container>
+  <ng-container *ngIf="!selectedAuction">
+    <div class="main">
+      <div class="AuctionsText">
+        <h1>Auctions</h1>
+      </div>
+      <div class="auctionsContainer">
+        <app-auction-item *ngFor="let auction of auctions" [auction]="auction" (auctionClick)="handleAuctionClick(auction)"></app-auction-item>
+      </div>
+    </div>
+  </ng-container>
+</div>

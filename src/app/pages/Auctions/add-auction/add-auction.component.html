@@ -1,0 +1,76 @@
+<div class="AddAuction-overlay">
+  <div class="AddAuction-window">
+    <div class="addAuction">
+      <h2 class="title">Add auction</h2>
+      <div class="imageContainer">
+        <!-- Image uploaded section -->
+        <div class="imageWrapper" *ngIf="imageUploaded && imageKey !== null">
+          <img [src]="getImageUrl(imageKey)" alt="Uploaded image" class="imagePicc" />
+          <button class="deleteImageBtn" (click)="handleDeleteImageClick()">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+        <!-- Image upload section -->
+        <label class="UploadPictureBtn" *ngIf="!imageUploaded || imageKey === null">
+          Add image
+          <input
+            class="AddImageInput"
+            type="file"
+            accept="image/jpeg, image/png"
+            (change)="handleAddImageClick($event)"
+            style="display: none"
+          />
+        </label>
+      </div>
+      <form (submit)="handleStartAuctionSubmit($event)">
+        <div class="forma">
+          <div class="titleANDdescription">
+            <label for="Title">Title</label>
+            <input
+              class="titleTextInput"
+              type="text"
+              id="Title"
+              name="name"
+              [(ngModel)]="formData.name"
+              (ngModelChange)="handleInputChange($event, 'name')"
+            />
+            <label for="Description">Description</label>
+            <textarea
+              id="Description"
+              name="description"
+              [(ngModel)]="formData.description"
+              (ngModelChange)="handleInputChange($event, 'description')"
+            ></textarea>
+          </div>
+          <div class="row">
+            <div class="priceDiv">
+              <label for="Price">Starting price</label>
+              <input
+                type="number"
+                id="Price"
+                name="startingPrice"
+                [(ngModel)]="formData.startingPrice"
+                (ngModelChange)="handleInputChange($event, 'startingPrice')"
+              />
+            </div>
+            <div class="dateDiv">
+              <label for="ExpDate">End date</label>
+              <input
+                type="date"
+                id="ExpDate"
+                name="endTime"
+                [(ngModel)]="formData.endTime"
+                (ngModelChange)="handleInputChange($event, 'endTime')"
+                [min]="today.toISOString().split('T')[0]"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="btn-Container">
+          <button class="cancelBtn" type="button" (click)="handleCancelAddClick()">Cancel</button>
+          <button class="StartAuctionBtn" type="submit">Start auction</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

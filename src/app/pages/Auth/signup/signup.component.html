@@ -1,0 +1,39 @@
+<div class="flex-container">
+    <div class='visualContainer'>
+      <img src="assets/images/presentacija2.png" alt='presentacija' class='presentacija'/>
+    </div>
+    <div class='form'>
+      <div class='logoPicSignup'>
+        <img src="assets/images/logo.png" alt="LogoSignup" class="logo" />
+      </div>
+      <h1 class="auctionText">Hello!</h1>
+      <p class='SigninText'>Please enter your details.</p>
+      <form class='SigninForm' (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username" class="label">Name</label>
+            <input type="text" class="formUsername" id="username" name="username" [(ngModel)]="formData.username" required />
+          </div>
+          <div class="form-group">
+            <label for="surname" class="label">Surname</label>
+            <input type="text" class="formUsername" id="surname" name="surname" [(ngModel)]="formData.surname" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="label">E-mail</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required />
+        </div>
+        <div class="form-group">
+          <label for="password" class="label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="formData.password" required />
+        </div>
+        <div class="form-group">
+          <label for="repeatPassword" class="label">Repeat Password</label>
+          <input type="password" class="form-control" id="repeatPassword" name="repeatPassword" [(ngModel)]="formData.repeatPassword" required />
+        </div>
+        <button type="submit" class="btnSubmitSignup">Signup</button>
+        <p class='SignUpParagraph'>Already have an account? <a class='SignUpToLoginLink' routerLink="/signin"> Login</a></p>
+      </form>
+    </div>
+  </div>
+  

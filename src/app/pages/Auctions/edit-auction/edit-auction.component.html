@@ -1,0 +1,37 @@
+<div class="AddAuction-overlay">
+  <div class="AddAuction-window">
+    <div class="addAuction">
+      <h2 class="title">Edit auction</h2>
+      <div class="imageContainer">
+        <!-- Conditionally render the image or the upload button -->
+        <div class="imageWrapper" *ngIf="imageUploaded && image">
+          <img [src]="image" alt="Uploaded image" class="imagePicc" />
+          <button class="deleteImageBtn" (click)="handleDeleteImageClick()"><i class="fas fa-trash"></i></button>
+        </div>
+        <label class="UploadPictureBtn" *ngIf="!imageUploaded">
+          Add image
+          <input class="AddImageInput" type="file" accept="image/jpeg, image/png" (change)="handleAddImageClick($event)" style="display: none;" />
+        </label>
+      </div>
+      <form (submit)="handleEditAuctionSubmit($event)">
+        <div class="forma">
+          <div class="titleANDdescription">
+            <label for="Title">Title</label>
+            <input class="titleTextInput" type="text" id="Title" name="name" [(ngModel)]="formData.name" (input)="handleInputChange($event)" />
+
+            <label for="Description">Description</label>
+            <textarea id="Description" name="description" [(ngModel)]="formData.description" (input)="handleInputChange($event)"></textarea>
+          </div>
+          <div class="dateDiv">
+            <label for="ExpDate">End date</label>
+            <input type="date" id="ExpDate" name="endTime"  (input)="handleInputChange($event)" [min]="today.toISOString().split('T')[0]" />
+          </div>
+        </div>
+        <div class="btn-Container">
+          <button class="cancelBtn" type="button" (click)="handleCancelClick()">Discard changes</button>
+          <button class="EditAuctionBtn" type="submit">Edit auction</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

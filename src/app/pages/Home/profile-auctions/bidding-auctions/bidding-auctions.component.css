@@ -1,6 +1,6 @@
 .auctionItemContainer {
     background-color: #f2f2f2;
-    padding: 5px; /* Smaller padding */
+    padding: 5px; 
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 15rem;
@@ -14,18 +14,18 @@
   }
   
   .TimeParagraphItemElement {
-    font-size: 10px; /* Smaller font size */
+    font-size: 10px; 
   }
   
   .nameContainer {
-    font-size: 14px; /* Smaller font size */
+    font-size: 14px; 
     margin-bottom: 3%;
   }
   
   .price {
     font-weight: bold;
-    font-size: 5px; /* Smaller font size */
-    margin-bottom: 5px; /* Adjusted margin */
+    font-size: 15px; 
+    margin-bottom: 5px;
   }
   
   .imagePic {
@@ -53,13 +53,18 @@
     border-radius: 20px;
     padding: 2%;
     color: black;
-    /* Add any additional styles as needed */
   }
   
   .TimeParagraphItemElement.red {
-    background-color: lightcoral; /* Adjust color as needed */
+    background-color: lightcoral; 
     color: black;
     padding: 2%;
     border-radius: 10px;
+  }
+
+  .auctionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   

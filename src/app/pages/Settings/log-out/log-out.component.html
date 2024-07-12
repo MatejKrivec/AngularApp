@@ -1,0 +1,13 @@
+<div>
+    <div class="LogOut-overlay" >
+      <div class="LogOut-window">
+        <div class="LogOut">
+          <a class="LogOutSettingsLink" (click)="handleProfileSettingsToggle()">&#x2699; Profile settings</a>
+          <button class="LogOutBtn" (click)="HandleLogOut()">Log out</button>
+        </div>
+      </div>
+    </div>
+  
+    <app-change-email-username *ngIf="showProfileSettings" (cancelClick)="handleCancelFromChild()"></app-change-email-username>
+  </div>
+  

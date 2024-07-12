@@ -1,0 +1,20 @@
+<div class="change-profile-picture-overlay">
+  <div class="change-profile-picture-window">
+    <div class="change-profile-picture">
+      <h2>Change Profile Picture</h2>
+      <form (submit)="handleSubmit($event)">
+        <div class="UploadPicContainer">
+          <img [src]="profilePicture || '/assets/images/DefaultProfilePic.png'" alt="ProfilePic" class="ProfilePic">
+          <label class="UploadPictureBtn">
+            Upload new picture
+            <input type="file" accept="image/*" (change)="handleFileChange($event)" style="display: none;">
+          </label>
+        </div>
+        <div class="buttonsContainer">
+          <button class="cancel-picture-button" type="button" (click)="handleCancel()">Cancel</button>
+          <button class="save-picture-button" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

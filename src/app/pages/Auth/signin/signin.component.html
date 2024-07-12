@@ -1,0 +1,26 @@
+<div class="flex-container">
+    <div class='visualContainer'>
+      <img src="assets/images/presentacija2.png" alt='presentacija' class='presentacija'/>
+    </div>
+    <div class='form'>
+      <div class='logoPic'>
+        <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      </div>
+      <h1 class="auctionText">Welcome back!</h1>
+      <p class='LoginText'>Please enter your details.</p>
+      <form class='LoginForm' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username" class="label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder='username' [(ngModel)]="formData.username" required/>
+        </div>
+        <div class="form-group">
+          <label for="password" class="label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder='password' [(ngModel)]="formData.password" required>
+        </div>
+        <a class="link" routerLink="/forgot-password">Forgot password?</a>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class='paragraph'>Don't have an account? <a class='LoginToSignupLink' routerLink="/signup">Sign up</a></p>
+    </div>
+  </div>
+  

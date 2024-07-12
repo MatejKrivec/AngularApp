@@ -13,7 +13,12 @@ export class InitPageComponent {
 
   onLogin() {
     console.log('Login button clicked');
-    this.router.navigate(['/home']);
+    this.router.navigate(['/signin']);
+  }
+
+  onSignup() {
+    console.log('Login button clicked');
+    this.router.navigate(['/signup']);
   }
 
 }

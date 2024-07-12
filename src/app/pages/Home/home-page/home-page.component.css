@@ -12,20 +12,22 @@
 }
 
 .NavButtons {
-    background-color: white; /* Set the background color for the active button */
+    background-color: rgb(64, 106, 196); 
     border-radius: 20px;
     border: none;
+    color: black;
+    padding: 1px;
   }
 
   .NavButtons button {
-    background-color: white; /* Default background color */
+    background-color: gainsboro; 
     border: none;
     border-radius: 20px;
     margin-right: 2px;
   }
 
 .NavButtons button.active {
-    background-color: lightblue; /* Set the background color for the active button */
+    background-color: lightblue; 
     border: none;
   }
 

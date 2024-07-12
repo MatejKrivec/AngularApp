@@ -1,0 +1,41 @@
+<div>
+    <div class="profile-settings-overlay" *ngIf="parentVisible">
+      <div class="profile-settings-window">
+        <div class="profile-settings">
+          <h2>Edit Profile</h2>
+          <form (submit)="handleSubmit(userData)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Name:</label>
+                <input type="text" id="firstName" name="firstName" [(ngModel)]="userData.firstName" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Surname:</label>
+                <input type="text" id="lastName" name="lastName" [(ngModel)]="userData.lastName" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" [(ngModel)]="userData.email" />
+            </div>
+            <div class="linksContainer">
+              <a class="changePassword" (click)="handleChangePasswordClick()">Change password</a>
+              <a class="changeProfilePic" (click)="handleChangeProfilePicClick()">Change profile picture</a>
+            </div>
+            <div class="button-container">
+              <button class="cancel-button" type="button" (click)="handleCancel()">Cancel</button>
+              <button class="save-button" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <ng-container *ngIf="showChangePassword">
+      <app-change-password (cancelClick)="handleCancelFromChild()"></app-change-password>
+    </ng-container>
+    <ng-container *ngIf="showChangeProfilePic">
+      <app-change-profile-picture (cancelClick)="handleCancelFromChild()"></app-change-profile-picture>
+    </ng-container>
+  </div>
+  

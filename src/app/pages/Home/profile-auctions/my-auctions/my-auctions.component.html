@@ -1,0 +1,23 @@
+<div class='auctionsContainer'>
+  <ng-container *ngIf="auctions.length > 0; else noAuctions">
+    <app-my-auction-item 
+      *ngFor="let auction of auctions"
+      [auction]="auction"
+      (edit)="handleEditAuctionClick(auction)"
+      (delete)="handleDeleteAuctionClick(auction.auctionId, auction.image)">
+    </app-my-auction-item>
+  </ng-container>
+  <ng-template #noAuctions>
+    <p>No auctions yet</p>
+  </ng-template>
+  <button class='addAuctionBtn' (click)="handleAddAuctionClick()">
+    <i class='fas fa-plus'></i>
+  </button>
+</div>
+
+<app-add-auction *ngIf="addAuctionVisible" (cancel)="handleCancelAddClick()"></app-add-auction>
+<app-edit-auction 
+  *ngIf="editAuctionVisible && editAuction" 
+  [auction]="editAuction!" 
+  (cancel)="handleCancelEditClick()">
+</app-edit-auction>

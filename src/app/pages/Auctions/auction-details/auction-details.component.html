@@ -1,0 +1,44 @@
+<!-- auction-details.component.html -->
+<div class="close-button-wrapper">
+  <button class="close-button" (click)="handleCancel($event)">Close</button>
+</div>
+<div class="auction-details-container">
+  <div class="image-container">
+    <img [src]="getImageFromLocalStorage(auction.image)" alt="Auction Item" class="auctionImage" />
+  </div>
+  <div class="details-container">
+    <div class="description">
+      <div class="status">
+        <p class="StatusAuction" [ngClass]="{'winningStatus': getStatus() === 'Winning', 'outbidStatus': getStatus() === 'Outbid'}">{{ getStatus() }}</p>
+        <p class="TimeParagraph" [ngClass]="{'red': getTimeRemainingString().includes('h')}">
+          {{ getTimeRemainingString() }}
+          <i class="fas fa-clock" style="margin-left: 5px;"></i>
+        </p>
+      </div>
+      <h2 class="auctionTitle">{{ auction.name }}</h2>
+      <p class="AuctionDescription">{{ auction.description }}</p>
+      <div class="placeBidContainer">
+        <p class="BidParagraph">Bid:</p>
+        <input type="number" class="BidAmountInput" [(ngModel)]="bidAmount" />
+        <button class="PlaceBidBtn" (click)="handlePlaceBid()" [disabled]="bidAmount <= updatedCurrentPrice">Place bid</button>
+      </div>
+    </div>
+    <div class="bids">
+      <h2>Bidding history({{ bids.length }})</h2>
+      <ul>
+        <li *ngFor="let bid of bids">
+          <div class="bid-info">
+            <div class="imageANDname">
+              <img [src]="getImageFromLocalStorage(users[bid.userId].profilePicture || '')" alt="User Profile" />
+              <p>{{ users[bid.userId].username || 'User ' + bid.userId }}</p>
+            </div>
+            <div class="date-amount">
+              <p>{{ bid.bidDateTime | date: 'yyyy-MM-dd HH:mm a' }}</p>
+              <p class="amount">${{ bid.amount }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="auctionItemContainer">
+    <div class="statusContainer">
+      <p class="auctionStatus" [ngClass]="getStatusClass()">{{ getStatus() }}</p>
+      <p class="TimeParagraphItemElement" [ngClass]="{ 'red': getTimeRemainingString().includes('h') }">
+        {{ getTimeRemainingString() }}
+        <i class="fas fa-clock" style="margin-left: 5px;"></i>
+      </p>
+    </div>
+    <div class="nameContainer">{{ auction.name }}</div>
+    <div class="price">Price: ${{ auction.price }}</div>
+    <img [src]="getImageFromLocalStorage(auction.image)" [alt]="auction.name" class="imagePic" />
+   
+  </div>
+  

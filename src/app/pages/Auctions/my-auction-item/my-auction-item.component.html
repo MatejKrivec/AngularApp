@@ -1,0 +1,21 @@
+<div class="auctionItemContainer">
+    <div class="statusContainer">
+      <p [ngClass]="getAuctionStatusClass()">{{ getAuctionStatusText() }}</p>
+      <p class="timeStatusP">
+        {{ getRemainingTimeInHours(auction.endTime) }}
+        <i class="fas fa-clock" style="margin-left: 5px;"></i>
+      </p>
+    </div>
+    <div class="nameContainer">{{ auction.name }}</div>
+    <div class="price">Price: ${{ auction.price }}</div>
+    <img [src]="getImageUrl(auction.image)" alt="{{ auction.name }}" class="imageWithButtons" />
+    <div class="buttonsContainer">
+      <button class="deleteBtn" (click)="handleDeleteAuctionClick()">
+        <i class="fas fa-trash"></i>
+      </button>
+      <button class="editBtn" (click)="handleEditAuctionClick()">
+        <i class="fas fa-edit"></i> Edit
+      </button>
+    </div>
+  </div>
+  

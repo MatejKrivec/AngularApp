@@ -1,0 +1,14 @@
+<!-- auction-item.component.html -->
+
+<div class="uniqueAuctionItem" (click)="handleClick()">
+  <div class="uniqueStatus">
+    <p [ngClass]="getStatusClass()">{{ getStatus() }}</p>
+    <p [ngClass]="getTimeClass()" class="uniqueTimeParagraph">
+      {{ getTimeRemainingString() }}
+      <i class="fas fa-clock" style="margin-left: 5px;"></i>
+    </p>
+  </div>
+  <div class="uniqueName">{{ auction.name }}</div>
+  <div class="uniquePrice">Price: {{ auction.price }}</div>
+  <img [src]="getImageFromLocalStorage(auction.image)" [alt]="auction.name" class="uniqueImage" />
+</div>
